@@ -1,5 +1,8 @@
 /**
- * @module sticky
+ * Represents an element that becomes sticky after given offset
+ *
+ * @module Sticky
+ * @version v1.0.3
  *
  * @author Sebastian Fitzner
  */
@@ -21,6 +24,19 @@ class Sticky extends AppModule {
 		};
 
 		super(obj, options);
+		App.registerModule && App.registerModule(Sticky.info, this.el);
+	}
+
+	/**
+	 * Get module information
+	 */
+	static get info() {
+		return {
+			name: 'Sticky',
+			version: '1.0.3',
+			vc: true,
+			mod: false // set to true if source was modified in project
+		};
 	}
 
 	initialize() {
